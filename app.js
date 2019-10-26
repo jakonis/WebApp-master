@@ -35,12 +35,16 @@ app.put('/reviews/:id/vote', reviews.incrementUpvotes);
 app.delete('/reviews/:id', reviews.deleteReview);
 
 app.post('/users',users.addUser);
+app.post('/users/search', users.findFuzzy);
 app.get('/users', users.findAll);
+app.get('/users/votes', users.findTotalVotes);
 app.get('/users/:id', users.findOne);
 app.put('/users/:id/vote', users.incrementUppoints);
 app.delete('/users/:id', users.deleteUser);
-app.get('/users/votes', users.findTotalPoints);
 // catch 404 and forward to error handler
+
+
+
 app.use(function(req, res, next) {
     next(createError(404));
 });
