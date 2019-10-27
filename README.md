@@ -8,6 +8,8 @@ Webapp CA1 I have created a back end app which store the user with Name, Gender,
 For second model i have created reviews where reviews get stored with upvotes on the review.From each models I am able create,read,update,delte.
 For this project I have also implemented heroku to host my app online instead of it running it local host. 
 I have also implemented fuzzy search incase user of the apps would like to pull infomation without knowing exact keywords.
+The information whihc user puts into the app get also persisted in the mongo database
+
 
 The app has:
 
