@@ -53,9 +53,11 @@ router.addReview = (req, res) => {
 
     res.setHeader('Content-Type', 'application/json');
 
-    var review = new Review();
-
-    review.review = req.body.review;
+    let review = new Review();
+    review.review = req.body.review
+    review.message = req.body.message;
+    review.stars = req.body.stars;
+    review.user = req.body.user;
 
 
     review.save(function(err) {
