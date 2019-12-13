@@ -54,7 +54,7 @@ router.addReview = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let review = new Review();
-    review.review = req.body.review
+    review.review = req.body.review;
     review.message = req.body.message;
     review.stars = req.body.stars;
     review.user = req.body.user;
@@ -94,6 +94,45 @@ router.deleteReview = (req, res) => {
             res.json({ message: 'Review Successfully Deleted!'});
     });
 }
+
+router.updateReview = (req, res) => {
+    Review.findById(req.params.id, function (err, reviews) {
+        if (err) {
+            res.status(404).send({
+                message: 'Cannot find Review associated with that id',
+                errmsg: err
+            })
+        } else {
+            if (req.body.name) {
+                reviews.review = req.body.review;
+            }
+            if (req.body.type) {
+                reviews.message = req.body.message;
+            }
+            if (req.body.stars) {
+                reviews.stars = req.body.stars;
+            }
+            if (req.body.user) {
+                reviews.user = req.body.user;
+            }
+            reviews.save(function (err) {
+                if (err) {
+                    res.json({
+                        message: 'reviews not updated',
+                        errmsg: err
+                    });
+                } else {
+                    res.json({
+                        message: 'reviews updated successfully',
+                        data: reviews
+                    });
+                }
+            });
+        }
+    });
+};
+
+
 
 router.findTotalVotes = (req, res) => {
 
