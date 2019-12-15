@@ -11,6 +11,12 @@ I have also implemented fuzzy search incase user of the apps would like to pull 
 The information which user puts into the app get also persisted in the mongo database
 
 
+HEROKU:
+
+https://webappassignment.herokuapp.com
+
+
+
 Refrences:
 
 https://www.youtube.com/watch?v=MxfxiR8TVNU&fbclid=IwAR3MnPIvQREJECSJACRaN26UDu0OiS8U7RE24sVLwbeT8AWOfrZyfxwF0wU
